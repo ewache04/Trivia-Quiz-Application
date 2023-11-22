@@ -1,0 +1,40 @@
+# Trivia Quiz Application
+
+## Introduction
+This is a simple Trivia Quiz application built using Python and the Tkinter library. It allows users to answer a series of trivia questions, with the application keeping track of the user's score and providing feedback on each answer.
+
+## Features
+- Randomized questions: Questions are loaded from a file and shuffled for a varied quiz experience.
+- Multiple-choice answers: Users can select from a pool of answers for each question.
+- Score tracking: The application keeps track of the user's score and displays it during the quiz.
+- Game Over: The game ends when the user reaches a specific score or after a certain number of questions.
+
+## Requirements
+- Python 3.x
+- Tkinter library
+
+## How to Run
+1. Ensure you have Python installed on your machine.
+2. Clone this repository to your local machine.
+3. Open a terminal and navigate to the project directory.
+4. Run the following command to start the Trivia Quiz application:
+    ```bash
+    python trivia_quiz.py
+    ```
+
+## File Structure
+- `trivia_quiz.py`: The main Python script containing the Trivia Quiz application.
+- `q_a.txt`: A text file containing the questions and answers for the quiz.
+
+## Usage
+- Click the "Start" button to begin the quiz.
+- Answer each question by selecting one of the multiple-choice options.
+- Click the "Submit" button to submit your answer and proceed to the next question.
+- The application will provide feedback on each answer and display your score.
+- The game ends when you reach a specific score or after a certain number of questions.
+
+## Author
+- **Jeremiah E. Ochepo**
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
