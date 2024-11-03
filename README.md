@@ -4,6 +4,8 @@
 
 This is a simple graphical user interface (GUI) Trivia Quiz application built in Python using the Tkinter library. The app presents a series of trivia questions to users, keeps track of their scores, and provides feedback based on their answers. It's a fun and interactive way to test general knowledge across various categories.
 
+![img.png](img.png)![img.png](img.png)![trivia-app-image.png](UI%20photos%2Ftrivia-app-image.png)![img.png](img.png)
+
 ## Features
 - **User-Friendly GUI:** Built with Tkinter for a responsive and clean user experience.
 - **Question Tracking:** Displays one question at a time and provides feedback on each answer.
@@ -62,7 +64,7 @@ Before you begin, ensure you have the following:
 
 ## Usage
 
-- Upon starting the application, you will see the first trivia question.
+- Upon starting the application, you will click start to see the first trivia question.
 - Select the answer you believe is correct and submit it.
 - After submitting, the app will provide immediate feedback and update your score.
 - Continue through each question, with your score tallying as you proceed.
