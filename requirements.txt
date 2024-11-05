@@ -1,0 +1,8 @@
+# requirements.txt
+#
+# This file lists the packages required to run the Trivia Quiz Application.
+# Each package should be specified with its version to ensure compatibility
+# and reproducibility of the environment.
+#
+# To install the listed dependencies, use the command:
+# pip install -r requirements.txt
