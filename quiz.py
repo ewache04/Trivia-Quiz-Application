@@ -30,7 +30,7 @@ class Quiz:
         self.index_num += 1
 
         # Check if all questions have been exhausted
-        if self.index_num >= self.numb_questions:
+        if self.index_num > self.numb_questions:
             self.display_summary()
 
     def fetch_q_and_a(self):
