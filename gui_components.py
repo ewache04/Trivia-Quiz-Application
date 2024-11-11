@@ -3,6 +3,7 @@
 import tkinter as tk
 from config import font_name, font_size, my_color
 
+
 # Global variable to track the current answer window instance
 current_answer_window = None
 
@@ -12,28 +13,49 @@ def start_quiz(root, quiz_instance):
     answers = quiz_instance.fetch_q_and_a()
     create_answer_window(root, quiz_instance, answers)
 
+    # Show the submit button when the quiz starts
+    if hasattr(root, 'submit_btn'):  # Ensure submit button exists
+        root.submit_btn.place(x=405, y=50, width=75)  # Make it visible
+
 
 def submit_answer(root, quiz_instance, user_answer_var):
-    user_answer = user_answer_var.get()
+    try:
+        # Get the user answer from the provided variable
+        user_answer = user_answer_var.get()
+    except AttributeError:
+        # Handle missing or incorrect attribute gracefully
+        print("Error: user_answer_var is not defined correctly or is not attached to root.")
+        return
+
+    # Proceed with submitting and processing the answer if no error occurred
     quiz_instance.submit()
     quiz_instance.check_user_answer(user_answer)
     quiz_instance.score_update(root)
-    quiz_instance.game_over(root)
+
+    # Fetch the next set of answers if available
     answers = quiz_instance.fetch_q_and_a()
     if answers:
         create_answer_window(root, quiz_instance, answers)
 
 
 def create_buttons(root, quiz_instance):
+    root.user_answer_var = tk.StringVar()  # Define user_answer_var on the root object
+
+    # Start button
     start_btn = tk.Button(root, text="Start", command=lambda: start_quiz(root, quiz_instance))
     start_btn.config(font=(font_name, font_size))
     start_btn.place(x=505, y=50, width=75)
 
+    # Submit button (initially hidden)
     submit_btn = tk.Button(root, text="Submit",
                            command=lambda: submit_answer(root, quiz_instance, root.user_answer_var))
     submit_btn.config(font=(font_name, font_size))
-    submit_btn.place(x=405, y=50, width=75)
 
+    # Store the submit button on root for easy access and initially hide it
+    root.submit_btn = submit_btn
+    submit_btn.place_forget()  # Hide the button initially
+
+    # Quit button
     quit_btn = tk.Button(root, text="Quit", bg='red', command=root.quit)
     quit_btn.config(font=(font_name, font_size))
     quit_btn.place(x=595, y=50, width=75)
